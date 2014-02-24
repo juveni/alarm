@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://tizen.org/AlarmDemo" version="2.0 Beta" viewmodes="fullscreen">
+    <tizen:application id="jlkwt2f3EW.AlarmDemo" package="jlkwt2f3EW" required_version="2.2"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/api/tizen" required="true"/>
+    <feature name="http://tizen.org/api/alarm" required="true"/>
+    <feature name="http://tizen.org/api/application.launch" required="true"/>
+    <feature name="http://tizen.org/api/application" required="true"/>
+    <feature name="http://tizen.org/api/application.read" required="true"/>
+    <icon src="icon.png"/>
+    <name>AlarmDemo</name>
+    <tizen:privilege name="http://tizen.org/privilege/alarm"/>  
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	  
+</widget>

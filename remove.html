@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tizen API Demos</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.0.min.css" />
+    <link rel="stylesheet" href="css/jqm-docs.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jqm-docs.js"></script>
+    <script src="js/jquery.mobile-1.0.min.js"></script>
+    <script src="js/demo.js"></script>
+</head>
+<body>
+<div data-role="page" class="type-interior">
+    <div data-role="header" data-theme="a">
+        <h1>Alarm</h1>
+        <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <div class="content-primary">
+            <h2>tizen.alarm.remove(&nbsp;)</h2>
+            <p>API is used to remove an alarm from the storage.</p>
+
+            <ul>
+            <li><span class="entry-title">Remove Single Alarm</span>
+            <p class="desc">Removes the alarm from the storage based on the given unique Id.</p>
+            <span class="heading">Demo</span>
+            <div class="content examplecode">
+                <a href="javascript:void(0);" onclick="javascript:run(this);">Run Code</a>
+				<pre class="prettyprint">
+					// remove all the previous alarms from storage
+					tizen.alarm.removeAll();
+					
+					//create and add alarm to storage.
+					var alarm = new tizen.AlarmRelative(2 * tizen.alarm.PERIOD_MINUTE); 
+					tizen.alarm.add(alarm, "org.tizen.browser"); 
+					var alarmsarray1 = tizen.alarm.getAll();
+					console.log(alarmsarray1.length + " alarms present in the storage.");
+					
+					//Remove the alarm from storage.
+					console.log("Remove alarm with id " + alarm.id);
+					tizen.alarm.remove(alarm.id);
+					var alarmsarray2 = tizen.alarm.getAll();
+					console.log(alarmsarray2.length + " alarms present in the storage.");
+				</pre>
+            </div>
+            </li></ul>
+
+            <h2>tizen.alarm.removeAll(&nbsp;)</h2>
+            <p>API is used to remove all the alarms from the storage.</p>
+
+			<ul>
+            <li><span class="entry-title">Remove All Alarms</span>
+            <p class="desc">Removes all the alarms from the storage.</p>
+            <span class="heading">Demo</span>
+            <div class="content examplecode">
+                <a href="javascript:void(0);" onclick="javascript:run(this);">Run Code</a>
+				<pre class="prettyprint">
+
+					var alarmsarray1 = tizen.alarm.getAll();
+					console.log(alarmsarray1.length + " alarms present in the storage.");
+					
+					//create and add alarm to storage.
+					console.log("Add three alarms to the storage.");
+					var alarm1 = new tizen.AlarmRelative(2 * tizen.alarm.PERIOD_MINUTE); 
+					tizen.alarm.add(alarm1, "org.tizen.clock");
+					var alarm2 = new tizen.AlarmRelative(2 * tizen.alarm.PERIOD_MINUTE); 
+					tizen.alarm.add(alarm2, "org.tizen.clock");
+					var alarm3 = new tizen.AlarmRelative(2 * tizen.alarm.PERIOD_MINUTE); 
+					tizen.alarm.add(alarm3, "org.tizen.clock"); 
+					var alarmsarray2 = tizen.alarm.getAll();
+					console.log(alarmsarray2.length + " alarms present in the storage.");
+					
+					//Remove the alarm from storage.
+					console.log("Remove all the alarms from storage.");
+					tizen.alarm.removeAll();
+					var alarmsarray3 = tizen.alarm.getAll();
+					console.log(alarmsarray3.length + " alarms present in the storage.");
+				</pre>
+            </div>
+            </li></ul>
+        </div><!--/content-primary -->
+
+        <div class="content-secondary">
+            <div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
+                <h3>Alarm API Demos</h3>
+                    <ul data-role="listview" data-theme="c" data-dividertheme="d" id="toc">
+                    </ul>
+            </div>
+        </div>
+    </div><!-- /content -->
+
+    <div data-role="footer" class="footer-docs" data-theme="c">
+        <p></p>
+    </div>
+</div><!-- /page -->
+</body>
+</html>

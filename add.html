@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alarm API Demo</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.0.min.css" />
+    <link rel="stylesheet" href="css/jqm-docs.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jqm-docs.js"></script>
+    <script src="js/jquery.mobile-1.0.min.js"></script>
+    <script src="js/demo.js"></script>
+</head>
+<body>
+<div data-role="page" class="type-interior">
+    <div data-role="header" data-theme="a">
+        <h1>Alarm</h1>
+        <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <div class="content-primary">
+            <h2>tizen.alarm.add()</h2>
+            <p> API used to add alarms based on relative/absolute time to the storage.</p>
+
+			<ul>
+            <h2>tizen.AlarmRelative()</h2>
+            <p> API used to creates an alarm that will occur at fixed interval of time in future.</p>
+            <ul>
+            <li><span class="entry-title">Simple Relative Alarm</span>
+            <p class="desc">sets an alarm that will trigger after the given time period from the current time</p>
+            <span class="heading">Demo</span>
+            <div class="content examplecode">
+                <a href="javascript:void(0);" onclick="javascript:run(this);">Run Code</a>
+				<pre class="prettyprint">
+					// remove all alarm
+					tizen.alarm.removeAll();
+					
+					//Create relative alarm, occurring at a fixed interval in the future.
+					var alarm = new tizen.AlarmRelative(2 * tizen.alarm.PERIOD_MINUTE);
+					//Add the alarm to the storage.
+					tizen.alarm.add(alarm, "org.tizen.clock"); 
+					console.log("Alarm added with id: " + alarm.id + "\n" + 
+					"It expires after 2 minutes from now");
+				</pre>
+            </div>
+            <p class="desc">The above code sets an alarm that will be triggered after 2 minutes from the current time after it is added.</p>
+            </li>
+            
+            <li><span class="entry-title">Recurring Relative Alarm</span>
+            <p class="desc">sets a alarm that will trigger after the given delay duration period from the current time and occurs repeatedly at given intervals afterwards</p>
+            <span class="heading">Demo</span>
+            <div class="content examplecode">
+                <a href="javascript:void(0);" onclick="javascript:run(this);">Run Code</a>
+				<pre class="prettyprint">
+					// remove all alarm
+					tizen.alarm.removeAll();
+					
+					var alarm = new tizen.AlarmRelative(tizen.alarm.PERIOD_HOUR,
+                                      2 * tizen.alarm.PERIOD_MINUTE);
+					tizen.alarm.add(alarm, "org.tizen.clock"); 
+					console.log("Alarm added with id: " + alarm.id + "\n" + 
+					"It expires after an hour, recurring every 2 minutes afterwards");
+				</pre>
+            </div>
+            <p class="desc">Above code Sets an alarm in one hour, recurring every 2 minutes afterwards.</p>
+            </li>
+            
+            <li><span class="entry-title">Schedule Application Service</span>
+            <p class="desc">Launch the given service after specified time.</p>
+            <span class="heading">Demo</span>
+            <div class="content examplecode">
+                <a href="javascript:void(0);" onclick="javascript:run(this);">Run Code</a>
+				<pre class="prettyprint">
+				var alarm = new tizen.AlarmRelative(10);
+				var service = new tizen.ApplicationService("http://tizen.org/appsvc/operation/view","http://www.tizen.org");
+				tizen.alarm.add(alarm, "org.tizen.browser", service);
+ 				console.log("Alarm added with id: " + alarm.id);
+				</pre>
+            </div>
+            <p class="desc">Above code launch the browser application after 10 sec.</p>
+            </li>
+            </ul>
+            
+            <h2>tizen.AlarmAbsolute()</h2>
+            <p> API used to create an alarm that will occur at a given date/time.</p>
+            <ul>            
+            <li><span class="entry-title">Simple Absolute Alarm</span>
+            <p class="desc">Sets an alarm that will trigger at a given absolute date/time</p>
+            <span class="heading">Demo</span>
+            <div class="content examplecode">
+                <a href="javascript:void(0);" onclick="javascript:run(this);">Run Code</a>
+				<pre class="prettyprint">
+				// remove all alarm
+				tizen.alarm.removeAll();
+				
+				var date = new Date(2013, 0, 1, 8, 0);
+				var alarm = new tizen.AlarmAbsolute(date);
+				tizen.alarm.add(alarm, "org.tizen.clock");
+				console.log("Alarm added with id: " + alarm.id + "\n" + 
+					"This alarm expires on January 1st 2013 08:00");
+				</pre>
+            </div>
+            <p class="desc">Above code sets an alarm on January 1st 2013 08:00</p>
+            </li>
+            
+            <li><span class="entry-title">Recurring Absolute Alarm</span>
+            <p class="desc">Sets an alarm that will occur repeatedly at given interval or will occur every week on the given array of days starting from the given absolute date.</p>
+            <span class="heading">Demo</span>
+            <div class="content examplecode">
+                <a href="javascript:void(0);" onclick="javascript:run(this);">Run Code</a>
+				<pre class="prettyprint">
+				// remove all alarm
+				tizen.alarm.removeAll();
+					
+				var date = new Date(2013, 0, 1, 8, 0);
+				var alarm = new tizen.AlarmAbsolute(date, ["SA", "SU"]);
+				tizen.alarm.add(alarm, "org.tizen.clock");
+				console.log("Alarm added with id: " + alarm.id + "\n" + 
+					"This alarm expires on every Saturday and Sunday, at 08:00, starting on January 1st 2013"); 
+				</pre>
+            </div>
+            </li>
+            </ul>
+            </ul>
+        </div>
+        <!--/content-primary -->
+
+        <div class="content-secondary">
+            <div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
+                <h3>Alarm API Demos</h3>
+                    <ul data-role="listview" data-theme="c" data-dividertheme="d" id="toc">
+                    </ul>
+            </div>
+        </div>
+    </div><!-- /content -->
+
+    <div data-role="footer" class="footer-docs" data-theme="c">
+        <p></p>
+    </div>
+</div><!-- /page -->
+</body>
+</html>
