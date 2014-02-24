@@ -33,13 +33,11 @@
             <p>3.How to delete alarms using the Tizen Alarm API.</p>
             <script type="text/javascript">
             	function createAlarm() {
-	            	console.log("Alarme:");
 	            	tizen.alarm.removeAll();
-	            	console.log("Removed olds");
-					var alarm = new tizen.AlarmRelative(2 * tizen.alarm.PERIOD_MINUTE, 2 * tizen.alarm.PERIOD_MINUTE);
-					console.log("Criado");
-					tizen.alarm.add(alarm, "org.tizen.clock");
-					console.log("ID : "+alarm.id);
+					var alarm = new tizen.AlarmRelative(2 * tizen.alarm.PERIOD_MINUTE, 2 * tizen.alarm.PERIOD_MINUTE);					
+					var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view","http://www.tizen.org");					
+					tizen.alarm.add(alarm, "org.tizen.clock", appControl);
+					alert("Alarme criado com ID : "+alarm.id);
 				}
             </script>
         </div><!--/content-primary -->
