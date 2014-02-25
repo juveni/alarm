@@ -10,7 +10,8 @@
     <icon src="icon.png"/>
     <name>AlarmDemo</name>
     <tizen:privilege name="http://tizen.org/privilege/alarm"/>
-    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>  
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/notification"/>  
 	   
 	   
 	   

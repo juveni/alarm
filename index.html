@@ -33,11 +33,40 @@
             <p>3.How to delete alarms using the Tizen Alarm API.</p>
             <script type="text/javascript">
             	function createAlarm() {
-	            	tizen.alarm.removeAll();
-					var alarm = new tizen.AlarmRelative(tizen.alarm.PERIOD_MINUTE / 2, 2 * tizen.alarm.PERIOD_MINUTE);					
-					var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view","http://www.tizen.org");					
-					tizen.alarm.add(alarm, "org.tizen.clock", appControl);
+	            	//tizen.alarm.removeAll();
+					//var alarm = new tizen.AlarmRelative(tizen.alarm.PERIOD_MINUTE / 2, 2 * tizen.alarm.PERIOD_MINUTE);					
+					//var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view","http://www.tizen.org");					
+					//tizen.alarm.add(alarm, "org.tizen.clock", appControl);
 					//alert("Alarme criado com ID : "+alarm.id);
+					try {
+					     var appControl = new tizen.ApplicationControl(
+					                      "http://tizen.org/appcontrol/operation/create_content",
+					                      null,
+					                      "image/jpg",
+					                      null);
+					     var notificationDict = {
+					                 content : "This is a simple notification.",
+					                 iconPath : "images/image1.jpg",
+					                 soundPath : "music/Over the horizon.mp3", 
+					                 vibration : true, 
+					                 appControl : appControl};
+					      
+					     var notification = new tizen.StatusNotification("SIMPLE", 
+					                 "Hora de tomar água!", notificationDict);
+					                      
+					     tizen.notification.post(notification);
+					} catch (err) {
+					     console.log (err.name + ": " + err.message);
+					}
+					 
+					try{
+				        var alarm = new tizen.AlarmRelative(15);
+				        tizen.alarm.add(alarm, "org.tizen.calendar-viewer");
+				        alert("In 15 seconds will start ");
+				    }
+				    catch (e){
+				        alert("Exception: " + e.message)
+				    }
 				}
             </script>
         </div><!--/content-primary -->
