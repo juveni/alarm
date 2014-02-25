@@ -59,14 +59,6 @@
 					     console.log (err.name + ": " + err.message);
 					}
 					 
-					try{
-				        var alarm = new tizen.AlarmRelative(15);
-				        tizen.alarm.add(alarm, "org.tizen.calendar-viewer");
-				        alert("In 15 seconds will start ");
-				    }
-				    catch (e){
-				        alert("Exception: " + e.message)
-				    }
 				}
             </script>
         </div><!--/content-primary -->
