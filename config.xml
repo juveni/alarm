@@ -9,7 +9,8 @@
     <feature name="http://tizen.org/api/application.read" required="true"/>
     <icon src="icon.png"/>
     <name>AlarmDemo</name>
-    <tizen:privilege name="http://tizen.org/privilege/alarm"/>  
+    <tizen:privilege name="http://tizen.org/privilege/alarm"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>  
 	   
 	   
 	   
