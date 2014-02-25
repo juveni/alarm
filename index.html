@@ -39,8 +39,15 @@
             <input type='button' value='Check Tizen' onclick='showNotification()' />
             <script type='text/JavaScript'>
             	function showNotification() {
-            		alert(tizen);
-            		alert(tizen.application);
+            		alert('before');
+            		var _notificationDict = {
+						content : "Notificação de Teste.",
+						iconPath : "images/image1.jpg"
+					};
+					
+					var _notification = new tizen.StatusNotification("SIMPLE","Notificação", _notificationDict);
+					tizen.notification.post(_notification);
+					alert('after');
             	}
             </script>
         </div><!-- /content -->
