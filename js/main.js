@@ -8,7 +8,5 @@ var init = function () {
         if(e.keyName == "back")
             tizen.application.getCurrentApplication().exit();
     });
-    
-
 };
-$(document).ready(init);
+$(document).bind('pageinit', init);

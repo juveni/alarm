@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Notificacao</name>
+	<name>TesteNotificacoes</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -35,7 +35,7 @@
 			<arguments>
 				<dictionary>
 					<key>usedLibraryType</key>
-					<value>jQueryMobile</value>
+					<value>WebUIFramework</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>

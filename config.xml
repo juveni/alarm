@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/Notificacao" version="1.0.0" viewmodes="maximized">
-    <tizen:application id="AWqpCHLKMI.Notificacao" package="AWqpCHLKMI" required_version="2.2"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/TesteNotificacoes" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="8LuJZ0cxLJ.TesteNotificacoes" package="8LuJZ0cxLJ" required_version="2.2"/>
     <content src="index.html"/>
     <icon src="icon.png"/>
-    <name>Notificacao</name>
+    <name>TesteNotificacoes</name>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:privilege name="http://tizen.org/privilege/notification"/>
-    <tizen:privilege name="http://tizen.org/privilege/tizen"/>
-    <tizen:privilege name="http://tizen.org/privilege/application.kill"/>
-    <tizen:privilege name="http://tizen.org/privilege/notification.read"/>
-    <tizen:privilege name="http://tizen.org/privilege/notification.write"/>
-    <tizen:privilege name="http://tizen.org/privilege/systeminfo"/>
-    <tizen:privilege name="http://tizen.org/privilege/application.info"/>  
-	  
-	  
-	   
-	 
 </widget>
