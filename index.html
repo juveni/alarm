@@ -31,6 +31,7 @@
             <p>1.How to create new alarm object</p>
             <p>2.How to fetch all existing alarms</p>
             <p>3.How to delete alarms using the Tizen Alarm API.</p>
+            <div data-role="notification" data-type="ticker" id="notification" data-interval="3000" style="display: none;"></div>
             <script type="text/javascript">
             	function createAlarm() {
 	            	//tizen.alarm.removeAll();
@@ -57,7 +58,7 @@
 					                      
 					     tizen.notification.post(notification);
 					} catch (err) {
-					     console.log (err.name + ": " + err.message);
+					    alert(err.name + ": " + err.message);
 					}
 					 
 				}
