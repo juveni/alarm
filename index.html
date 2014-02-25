@@ -31,23 +31,25 @@
 					//tizen.alarm.add(alarm, "org.tizen.clock", appControl);
 					//alert("Alarme criado com ID : "+alarm.id);
 					
-					try {					
+					try {	
+						/*				
 					     var appControl = new tizen.ApplicationControl(
 					                      "http://tizen.org/appcontrol/operation/create_content",
 					                      null,
 					                      "image/jpg",
-					                      null);
-					     /*var notificationDict = {
+					                      null);*/
+					                      
+					     var notificationDict = {
 					                 content : "This is a simple notification.",
 					                 iconPath : "images/image1.jpg",
 					                 soundPath : "music/Over the horizon.mp3", 
 					                 vibration : true, 
-					                 appControl : appControl};
+					                 appControl : null};
 					      
 					     var notification = new tizen.StatusNotification("SIMPLE", 
 					                 "Hora de tomar água!", notificationDict);
 					                      
-					     tizen.notification.post(notification);*/
+					     tizen.notification.post(notification);
 					} catch (err) {
 					    alert(err.name + ": " + err.message);
 					}
