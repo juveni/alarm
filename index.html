@@ -23,6 +23,47 @@
         <div data-role="content" >
             <p>This is a single page boilerplate template that you can copy to build your first jQuery Mobile page.</p>
             <input type='button' onclick='createAlarm()' value='Notificar' />
+            <script type="text/javascript">
+            	function createAlarm() {
+	            	//tizen.alarm.removeAll();
+					//var alarm = new tizen.AlarmRelative(tizen.alarm.PERIOD_MINUTE / 2, 2 * tizen.alarm.PERIOD_MINUTE);					
+					//var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view","http://www.tizen.org");					
+					//tizen.alarm.add(alarm, "org.tizen.clock", appControl);
+					//alert("Alarme criado com ID : "+alarm.id);
+					
+					try {						 			
+					     /*var appControl = new tizen.ApplicationControl(
+					                      "http://tizen.org/appcontrol/operation/create_content",
+					                      null,
+					                      "image/jpg",
+					                      null);*/
+					                      
+					     var notificationDict = {
+					                 content : "This is a simple notification.",
+					                 iconPath : "images/image1.jpg",
+					                 soundPath : "music/Over the horizon.mp3", 
+					                 vibration : true };
+					      
+					     var notification = new tizen.StatusNotification("SIMPLE", 
+					                 "Hora de tomar água!", notificationDict);
+					                      
+					     tizen.notification.post(notification);
+					} catch (err) {
+					    alert(err.name + ": " + err.message);
+					}
+					
+					
+					/*
+					var _notificationDict = {
+						content : "Notificação de Teste.",
+						iconPath : "images/image1.jpg"
+					};
+					
+					var _notification = new tizen.StatusNotification("SIMPLE","Notificação", _notificationDict);
+					tizen.notification.post(_notification);*/
+														 
+				}
+            </script>
         </div><!-- /content -->
 
         <div data-role="footer" data-position="fixed" >
