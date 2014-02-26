@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/Alarme" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="aC1PrJ71Qk.Alarme" package="aC1PrJ71Qk" required_version="2.2"/>
+    <content src="index.html"/>
+    <icon src="icon.png"/>
+    <name>Alarme</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/alarm"/>
+    <tizen:privilege name="http://tizen.org/privilege/notification"/>
+</widget>
