@@ -59,6 +59,6 @@ function notificationMe() {
 		alert('Prepare to Tizen Alert');
 		alert(alarm.getNextScheduledDate()+" - "+window.tizen.alarm.getAll().length);
 	} catch(err) {
-		console.log(err);
+		alert(err.name+" : "+err.message);
 	}
 }
