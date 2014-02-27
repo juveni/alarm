@@ -53,10 +53,11 @@ function notificationMe() {
 	try {
 		tizen.alarm.removeAll();
 		//var alarm = new tizen.AlarmRelative(5);
-		var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view");
-		var alarm = new tizen.AlarmAbsolute(new Date(2014, 1, 27, 9, 38));
-		tizen.alarm.add(alarm, tizen.application.getCurrentApplication().appInfo.id, appControl);	
-		alert(alarm.getNextScheduledDate()+" - "+tizen.alarm.getAll().length);
+		var appControl = new window.tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view");
+		var alarm = new window.tizen.AlarmAbsolute(new Date(2014, 1, 27, 9, 40));
+		window.tizen.alarm.add(alarm, tizen.application.getCurrentApplication().appInfo.id, appControl);
+		alert('Prepare to Tizen Alert');
+		alert(alarm.getNextScheduledDate()+" - "+window.tizen.alarm.getAll().length);
 	} catch(err) {
 		console.log(err);
 	}
