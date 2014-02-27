@@ -11,7 +11,7 @@ var init = function () {
     
 
     notificationMe = function () {
-    	try {
+    	//try {
     		if(tizen)
     			alert("Tem Tizen");
     		if(tizen.alarm)
@@ -31,9 +31,9 @@ var init = function () {
     		window.tizen.alarm.add(alarm, tizen.application.getCurrentApplication().appInfo.id, appControl);
     		alert('Prepare to Tizen Alert');
     		alert(alarm.getNextScheduledDate()+" - "+window.tizen.alarm.getAll().length);
-    	} catch(err) {
-    		alert(err.name+" : "+err.message);
-    	}
+    	//} catch(err) {
+    	//	alert(err.name+" : "+err.message);
+    	//}
     }
 
 };
