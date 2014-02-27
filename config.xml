@@ -2,9 +2,33 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/Alarme" version="1.0.0" viewmodes="maximized">
     <tizen:application id="aC1PrJ71Qk.Alarme" package="aC1PrJ71Qk" required_version="2.2"/>
     <content src="index.html"/>
+    <feature name="http://tizen.org/api/tizen" required="true"/>
+    <feature name="http://tizen.org/api/application" required="true"/>
+    <feature name="http://tizen.org/api/application.kill" required="true"/>
+    <feature name="http://tizen.org/api/application.launch" required="true"/>
+    <feature name="http://tizen.org/api/application.read" required="true"/>
+    <feature name="http://tizen.org/api/alarm" required="true"/>
+    <feature name="http://tizen.org/api/alarm.read" required="true"/>
+    <feature name="http://tizen.org/api/alarm.write" required="true"/>
     <icon src="icon.png"/>
     <name>Alarme</name>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:privilege name="http://tizen.org/privilege/alarm"/>
     <tizen:privilege name="http://tizen.org/privilege/notification"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.info"/>
+    <tizen:setting screen-orientation="portrait" context-menu="enable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+	   
+	   
+	   
+     
+	    
+        
+      
+       
+	   
+	   
+	   
+	  
+	 
 </widget>

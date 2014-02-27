@@ -19,9 +19,11 @@
         <div data-role="header" data-position="fixed" >
             <h1>Single-page application </h1>
         </div><!-- /header -->
-
+        
+       	<div data-role="notification" data-type="ticker" id="notification" data-interval="4000" style="display: none; background: #41414e; padding: 10px;"></div>  
+        
         <div data-role="content" >
-            <input type='button' onclick='createAlarm()' value='Criar Alarme' />
+            <input type='button' onclick='notificationMe()' value='Criar Alarme' />
         </div><!-- /content -->
 
         <div data-role="footer" data-position="fixed" >
