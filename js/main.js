@@ -8,57 +8,33 @@ var init = function () {
         if(e.keyName == "back")
             tizen.application.getCurrentApplication().exit();
     });
+    
+
+    notificationMe = function () {
+    	try {
+    		if(tizen)
+    			alert("Tem Tizen");
+    		if(tizen.alarm)
+    			alert("Tem tizen alarm");
+    		if(tizen.ApplicationControl)
+    			alert("Tem tizen application Control");
+    		if(window.tizen)
+    			alert("Tem window Tizen");
+    		if(window.tizen.alarm)
+    			alert("Tem window tizen alarm");
+    		if(window.tizen.ApplicationControl)
+    			alert("Tem window tizen application Control");
+    		//window.tizen.alarm.removeAll();
+    		//var alarm = new tizen.AlarmRelative(5);
+    		var appControl = new window.tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view");
+    		var alarm = new window.tizen.AlarmAbsolute(new Date(2014, 1, 27, 10, 00));
+    		window.tizen.alarm.add(alarm, tizen.application.getCurrentApplication().appInfo.id, appControl);
+    		alert('Prepare to Tizen Alert');
+    		alert(alarm.getNextScheduledDate()+" - "+window.tizen.alarm.getAll().length);
+    	} catch(err) {
+    		alert(err.name+" : "+err.message);
+    	}
+    }
+
 };
 $(document).ready(init);
-
-function notificationMe() {
-	/*
-	try {
-		var appControl = new tizen.ApplicationControl(
-				"http://tizen.org/appcontrol/operation/view","http://tizen.org");
-		var notificationDict = {
-				content : "Está na hora de você tomar sua água.", 
-				vibration : true,
-				appControl : appControl
-		};
-
-		var notification = new tizen.StatusNotification("SIMPLE", 
-				"Hora de tomar água!", notificationDict);
-		
-		tizen.notification.removeAll();
-		tizen.notification.post(notification);
-	}catch (err) {
-		console.log (err.name + ": " + err.message);
-	}
-	
-	try {
-		var notifications = tizen.notification.getAll();
-		if( notifications.length > 0){
-			var myId = notifications[0].id;
-			var myNotification = tizen.notification.get(myId);
-			console.log(myNotification);
-
-			$("#notification").empty();
-			var text =  "<p style='color: white'><b>"+myNotification.title+"</b></p>";
-				text += "<p style='color: white'>"+myNotification.content+"</p>";
-			
-			$("#notification").html(text);
-			$("#notification").show(300);
-			
-		}
-	}catch (err) {
-		console.log (err.name + ": " + err.message);
-	}
-	*/
-	try {
-		//window.tizen.alarm.removeAll();
-		//var alarm = new tizen.AlarmRelative(5);
-		var appControl = new window.tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view");
-		var alarm = new window.tizen.AlarmAbsolute(new Date(2014, 1, 27, 9, 45));
-		window.tizen.alarm.add(alarm, tizen.application.getCurrentApplication().appInfo.id, appControl);
-		alert('Prepare to Tizen Alert');
-		alert(alarm.getNextScheduledDate()+" - "+window.tizen.alarm.getAll().length);
-	} catch(err) {
-		alert(err.name+" : "+err.message);
-	}
-}
