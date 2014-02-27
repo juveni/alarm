@@ -51,7 +51,7 @@ function notificationMe() {
 	}
 	*/
 	try {
-		tizen.alarm.removeAll();
+		window.tizen.alarm.removeAll();
 		//var alarm = new tizen.AlarmRelative(5);
 		var appControl = new window.tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view");
 		var alarm = new window.tizen.AlarmAbsolute(new Date(2014, 1, 27, 9, 45));
