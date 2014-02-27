@@ -5,8 +5,10 @@ var init = function () {
 
     // add eventListener for tizenhwkey
     document.addEventListener('tizenhwkey', function(e) {
-        if(e.keyName == "back")
+        if(e.keyName == "back") {
+        	alert(tizen.application);
             tizen.application.getCurrentApplication().exit();
+        }
     });
     
 
